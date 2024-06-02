@@ -3,5 +3,6 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "[xml]": {
         "editor.defaultFormatter": "mikeburgh.xml-format"
-    }
+    },
+    "files.autoSave": "onFocusChange"
 }
