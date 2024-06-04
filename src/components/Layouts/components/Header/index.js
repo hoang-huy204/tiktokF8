@@ -1,18 +1,12 @@
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-    faCircleQuestion,
     faCircleXmark,
-    faCloudArrowUp,
-    faCoins,
+    faPlus,
     faEarthAsia,
     faEllipsisVertical,
-    faGear,
-    faKeyboard,
     faMagnifyingGlass,
-    faSignOut,
     faSpinner,
-    faUser,
 } from '@fortawesome/free-solid-svg-icons';
 import HeadlessTippy from '@tippyjs/react/headless';
 import Tippy from '@tippyjs/react';
@@ -25,12 +19,25 @@ import images from '~/assets/images';
 import AccountItem from '~/components/AccountItem';
 import Button from '~/components/Button';
 import Menu from '~/components/Popper/Menu';
+import {
+    CoinIcon,
+    KeybroardIcon,
+    LanguageIcon,
+    LogoutIcon,
+    MessageIcon,
+    NoticeIcon,
+    QuestionIcon,
+    SearchIcon,
+    SettingsIcon,
+    UserIcon,
+} from '~/components/Icon';
+import Image from '~/components/Image';
 
 const cx = classNames.bind(styles);
 
 const MENU_ITEMS = [
     {
-        icon: <FontAwesomeIcon icon={faEarthAsia} />,
+        icon: <LanguageIcon />,
         title: 'English',
         children: {
             title: 'Language',
@@ -49,35 +56,35 @@ const MENU_ITEMS = [
         },
     },
     {
-        icon: <FontAwesomeIcon icon={faCircleQuestion} />,
+        icon: <QuestionIcon />,
         title: 'Feedback and help',
         to: '/feedback',
     },
     {
-        icon: <FontAwesomeIcon icon={faKeyboard} />,
+        icon: <KeybroardIcon />,
         title: 'Keybroard shortcuts',
     },
 ];
 
 const userMenu = [
     {
-        icon: <FontAwesomeIcon icon={faUser} />,
+        icon: <UserIcon />,
         title: 'View profile',
         to: '/@hoaa',
     },
     {
-        icon: <FontAwesomeIcon icon={faCoins} />,
+        icon: <CoinIcon />,
         title: 'Get coins',
         to: '/coin',
     },
     {
-        icon: <FontAwesomeIcon icon={faGear} />,
+        icon: <SettingsIcon />,
         title: 'Settings',
         to: '/settings',
     },
     ...MENU_ITEMS,
     {
-        icon: <FontAwesomeIcon icon={faSignOut} />,
+        icon: <LogoutIcon />,
         title: 'Log out',
         to: '/logout',
         separate: true,
@@ -131,16 +138,25 @@ function Header() {
                         </button>
                         <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />
                         <button className={cx('search-btn')}>
-                            <FontAwesomeIcon icon={faMagnifyingGlass} />
+                            <SearchIcon />
                         </button>
                     </div>
                 </HeadlessTippy>
                 <div className={cx('actions')}>
                     {currentUser ? (
                         <>
-                            <Tippy delay={[0, 200]} content="Upload video" placement="bottom">
+                            <Button outline className={cx('button-text')} leftIcon={<FontAwesomeIcon icon={faPlus} />}>
+                                Upload
+                            </Button>
+                            <Tippy delay={[0, 200]} content="Messages" placement="bottom">
                                 <button className={cx('btn')}>
-                                    <FontAwesomeIcon icon={faCloudArrowUp} />
+                                    <MessageIcon />
+                                </button>
+                            </Tippy>
+                            <Tippy delay={[0, 200]} content="Inbox" placement="bottom">
+                                <button className={cx('btn')}>
+                                    <NoticeIcon width="3.2rem" height="3.2rem" />
+                                    <div className={cx('sup-badge')}>40</div>
                                 </button>
                             </Tippy>
                         </>
@@ -153,10 +169,10 @@ function Header() {
 
                     <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
                         {currentUser ? (
-                            <img
+                            <Image
                                 className={cx('user-avatar')}
-                                src="https://p16-sign-sg.tiktokcdn.com/aweme/100x100/tos-alisg-avt-0068/4b85df94ddbc913a995d4d721e417580.jpeg?lk3s=a5d48078&nonce=20230&refresh_token=6155f61b65872e59d8cc3e59880c1b53&x-expires=1717160400&x-signature=ua6W7wCxIb3w4%2BqmQULK%2BscCHzM%3D&shp=a5d48078&shcp=81f88b70"
-                                alt="hoaa"
+                                src="https://p16-sign-sg.tiktokcdn.com/aweme/720x720/tos-alisg-avt-0068/7328533548061851656.jpeg?lk3s=a5d48078&nonce=17650&refresh_token=24867bc49bf1a3d7fac04ee314adf93a&x-expires=1717506000&x-signature=TB3C2LmrzE7rUyKmcZDKvaFHqTQ%3D&shp=a5d48078&shcp=81f88b70"
+                                alt="hoangtran"
                             />
                         ) : (
                             <button className={cx('more-btn')}>

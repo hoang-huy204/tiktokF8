@@ -6,7 +6,8 @@
     min-width: 100px;
     border-radius: 4px;
     font-size: 1.6rem;
-    font-weight: 700;
+    font-weight: 600;
+    font-family: 'TikTokFont', san-serif;
     cursor: pointer;
     background-color: var(--white);
     border: 1px solid transparent;
@@ -28,7 +29,7 @@
 }
 
 .icon {
-    display: inline-block;
+    display: flex;
     width: 20px;
     text-align: left;
 }
@@ -48,11 +49,11 @@
 .primary {
     box-shadow: none;
     color: var(--white);
-    border-color: var(--primary);
-    background-color: var(--primary);
+    border-color: var(--primary-color);
+    background-color: var(--primary-color);
 
     &:hover {
-        border-color: var(--primary);
+        border-color: var(--primary-color);
         background: linear-gradient(0deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.06)), #fe2c55;
     }
 }
@@ -64,13 +65,12 @@
 }
 
 .outline {
-    color: var(--primary);
-    border-color: currentColor;
+    color: var(--text-color);
+    border-color: rgba(22, 24, 35, 0.12);
     box-shadow: none;
 
     &:hover {
-        border-color: currentColor;
-        background-color: rgba(254, 44, 85, 0.06);
+        background-color: rgba(22, 24, 35, 0.03);
     }
 }
 
