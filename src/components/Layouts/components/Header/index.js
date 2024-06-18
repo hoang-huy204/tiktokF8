@@ -1,10 +1,12 @@
 import classNames from 'classnames/bind';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faEllipsisVertical } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 
 import styles from './Header.module.scss';
+import routesConfig from '~/config/routes';
 import images from '~/assets/images';
 import Button from '~/components/Button';
 import Menu from '~/components/Popper/Menu';
@@ -96,7 +98,9 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <img src={images.logo} alt="Tiktok" />
+                <Link to={routesConfig.home} className="logo-link">
+                    <img src={images.logo} alt="Tiktok" />
+                </Link>
                 <Search />
                 <div className={cx('actions')}>
                     {currentUser ? (
@@ -127,7 +131,7 @@ function Header() {
                         {currentUser ? (
                             <Image
                                 className={cx('user-avatar')}
-                                src="https://p16-sign-sg.tiktokcdn.com/aweme/720x720/tos-alisg-avt-0068/7328533548061851656.jpeg?lk3s=a5d48078&nonce=17650&refresh_token=24867bc49bf1a3d7fac04ee314adf93a&x-expires=1717506000&x-signature=TB3C2LmrzE7rUyKmcZDKvaFHqTQ%3D&shp=a5d48078&shcp=81f88b70"
+                                src="https://p9-sign-sg.tiktokcdn.com/aweme/720x720/tos-alisg-avt-0068/7328533548061851656.jpeg?lk3s=a5d48078&nonce=5166&refresh_token=004d872c46028e9a7979c98ccd5e2d60&x-expires=1718888400&x-signature=Iun%2BKk4jHpW7Ili5OB8xYbklF3w%3D&shp=a5d48078&shcp=81f88b70"
                                 alt="hoangtran"
                             />
                         ) : (
