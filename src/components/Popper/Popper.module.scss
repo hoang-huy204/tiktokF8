@@ -1,5 +1,7 @@
 .wrapper {
     padding-top: 8px;
+    display: flex;
+    flex-direction: column;
     width: 100%;
     min-height: 100px;
     max-height: min((100vh - 96px) - 60px, 734px);

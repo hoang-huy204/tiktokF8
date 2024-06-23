@@ -131,7 +131,7 @@ function Header() {
                         {currentUser ? (
                             <Image
                                 className={cx('user-avatar')}
-                                src="https://p9-sign-sg.tiktokcdn.com/aweme/720x720/tos-alisg-avt-0068/7328533548061851656.jpeg?lk3s=a5d48078&nonce=5166&refresh_token=004d872c46028e9a7979c98ccd5e2d60&x-expires=1718888400&x-signature=Iun%2BKk4jHpW7Ili5OB8xYbklF3w%3D&shp=a5d48078&shcp=81f88b70"
+                                src="https://scontent.fhan5-9.fna.fbcdn.net/v/t39.30808-1/393392332_1014603716438696_8091540552561028290_n.jpg?stp=c0.0.40.40a_cp0_dst-jpg_p40x40&_nc_cat=109&ccb=1-7&_nc_sid=5f2048&_nc_ohc=jhkPbudm-GYQ7kNvgE2JTyU&_nc_ht=scontent.fhan5-9.fna&oh=00_AYCTMgtA7HQyCfeMo7cabk9o-_g_fXi5Fh1L8hMlRaeIVw&oe=667B6236"
                                 alt="hoangtran"
                             />
                         ) : (
