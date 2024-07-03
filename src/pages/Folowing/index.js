@@ -1,5 +1,1 @@
-function Folowing() {
-    return <h2>Folowing page</h2>;
-}
-
-export default Folowing;
+export { default } from './Folowing';
